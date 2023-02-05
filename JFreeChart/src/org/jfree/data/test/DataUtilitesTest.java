@@ -7,8 +7,6 @@ import org.jfree.data.Values2D;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 
-import org.junit.Test;
-
 public class DataUtilitesTest {
 	
 	 // -----------------------------------------------------------------------------------------
@@ -177,5 +175,12 @@ public class DataUtilitesTest {
 	 // End of Test Code
 	 // -----------------------------------------------------------------------------------------
     
+	 @After
+	 void tearDown() throws Exception {
+	 }
+
+	 @AfterClass
+	 public static void tearDownAfterClass() throws Exception {
+	 }
 
 }
