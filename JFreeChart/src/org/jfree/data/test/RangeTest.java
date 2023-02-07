@@ -227,143 +227,141 @@ public class RangeTest {
 		double expectedLowerBound = -1001;
 		assertEquals("Lower bound was differ when input was Nagative range, and have below lower bound", expectedLowerBound, actualLowerBound, .000000001d);
 	}
+    // ------- Test for intersects(double, double) -------
+	// The assumed Range lower = 5, upper = 15;
 	
-	// ------- Test for intersects(double, double) -------
-		// The assumed Range lower = 5, upper = 15;
-		
-		/*
-		 * This will test the case when two doubles are used as the parameters for intersects.
-		 * The doubles will both be within the range and will satisfy the conditions that lower <= upper
-		 * The expected value that will be asserted is TRUE, as the ranges should intersect.
-		 */
-		
-		@Test(timeout = 1000) // timeout: 1000
-		public void testIntersectsDoublesWithinRange() {
-			boolean result = intersectRange.intersects(10.5,14.5);
-			assertTrue("The expected value is TRUE but returned: "+ result,result);
-		}
-		
-		/*
-		 * This will test the case when two doubles are used as the parameters for intersects.
-		 * the lower and upper limit will have the same value
-		 * The values will exist on the boundary of the test range
-		 * The expected value that will be asserted is TRUE, as the ranges should intersect.
-		 */
-		
-		@Test(timeout = 1000) // timeout: 1000
-		public void testIntersectsWithinRangeToRightLowerEqualsUpper() {
-			boolean result = intersectRange.intersects(15,15);
-			assertTrue("The expected value is TRUE but returned: "+ result,result);
-		}
-		
-		/*
-		 * This will test the case when two doubles are used as the parameters for intersects.
-		 * the lower and upper limit will have the same value
-		 * The values will exist outside the boundaries of the test range 
-		 * The expected value that will be asserted is TRUE, as the ranges should intersect.
-		 */
-		
-		@Test(timeout = 1000) // timeout: 1000
-		public void testIntersectsOutsideRangeToRightLowerEqualsUpper() {
-			boolean result = intersectRange.intersects(-5,-5);
-			assertFalse("The expected value is FALSE but returned: "+ result,result);
-		}
-		
-		/*
-		 * This will test the case when two doubles are used as the parameters for intersects.
-		 * The doubles will both be within the range and will not satisfy the conditions that lower <= upper
-		 * The expected value that will be asserted is FALSE, as the input is invalid.
-		 */
-		
-		@Test(timeout = 1000) // timeout: 1000
-		public void testIntersectsDoublesWithinRangeLowerGreaterThanUpper() {
-			boolean result = intersectRange.intersects(14.5,10.5);
-			assertFalse("The expected value is FALSE but returned: "+ result,result);
-		}	
-		
-		/*
-		 * This will test the case when two doubles are used as the parameters for intersects.
-		 * the double for lower will be outside the test range on the right side
-		 * The double for upper will be within the test range
-		 * and will not satisfy the conditions that lower <= upper
-		 * The expected value that will be asserted is FALSE, as the input is invalid.
-		 */
-		
-		@Test(timeout = 1000) // timeout: 1000
-		public void testIntersectsDoublesOnRightLowerGreaterThanUpper() {
-			boolean result = intersectRange.intersects(20,10.5);
-			assertFalse("The expected value is FALSE but returned: "+ result,result);
-		}	
-		
-		/*
-		 * This will test the case when two doubles are used as the parameters for intersects.
-		 * the double for lower will be outside the test range on the right side
-		 * The double for upper will be within the test range
-		 * and will not satisfy the conditions that lower <= upper
-		 * The expected value that will be asserted is FALSE, as the input is invalid.
-		 */
-		
-		@Test(timeout = 1000) // timeout: 1000
-		public void testIntersectsDoublesOnLeftLowerGreaterThanUpper() {
-			boolean result = intersectRange.intersects(5.5,-5.5);
-			assertFalse("The expected value is FALSE but returned: "+ result,result);
-		}	
-		
-		
-		
-		
-		/*
-		 * This will test the case when two doubles are used as the parameters for intersects.
-		 * One double will be within the range on the right side and the doubles will satisfy the conditions that lower <= upper 
-		 * The expected value that will be asserted is TRUE, as the ranges should intersect.
-		 */
-		
-		@Test(timeout = 1000) // timeout: 1000
-		public void testIntersectsWithinRangeToRight() {
-			boolean result = intersectRange.intersects(14.5,20);
-			assertTrue("The expected value is TRUE but returned: "+ result,result);
-		}
-		
-		
-		
-		/*
-		 * This will test the case when two doubles are used as the parameters for intersects.
-		 * One double will be within the range on the left side and the doubles will satisfy the conditions that lower <= upper
-		 * The expected value that will be asserted is TRUE, as the ranges should intersect.
-		 */
-		
-		@Test(timeout = 1000) // timeout: 1000
-		public void testIntersectsWithinRangeToLeft() {
-			boolean result = intersectRange.intersects(-5.2,5.2);
-			assertTrue("The expected value is TRUE but returned: "+ result,result);
-		}
-		
-		/*
-		 * This will test the case when two doubles are used as the parameters for intersects.
-		 * the upper value will be equal to the bound of the range on the left side and 
-		 * the doubles will satisfy the conditions that lower <= upper 
-		 * The expected value that will be asserted is TRUE, as the ranges should intersect.
-		 */
-		
-		@Test(timeout = 1000) // timeout: 1000
-		public void testIntersectsEqualRangeToLeft() {
-			boolean result = intersectRange.intersects(-5.2,5);
-			assertTrue("The expected value is TRUE but returned: "+ result,result);
-		}
-		
-		/*
-		 * This will test the case when two doubles are used as the parameters for intersects.
-		 * The doubles will be outside the test range, and the doubles will satisfy the conditions that lower <= upper
-		 * The expected value that will be asserted is FALSE, as the ranges should not intersect.
-		 */
-		
-		@Test(timeout = 1000) // timeout: 1000
-		public void testIntersectsOutsideRange() {
-			boolean result = intersectRange.intersects(-15.5,-5);
-			assertFalse("The expected value is FALSE but returned: "+ result,result);
-		}
-		// ------- End of tests for intersects(double, double) -------
-    	
+	/*
+	 * This will test the case when two doubles are used as the parameters for intersects.
+	 * The doubles will both be within the range and will satisfy the conditions that lower <= upper
+	 * The expected value that will be asserted is TRUE, as the ranges should intersect.
+	 */
+	
+	@Test(timeout = 1000) // timeout: 1000
+	public void testIntersectsDoublesWithinRange() {
+		boolean result = intersectRange.intersects(10.5,14.5);
+		assertTrue("The expected value is TRUE but returned: "+ result,result);
+	}
+	
+	/*
+	 * This will test the case when two doubles are used as the parameters for intersects.
+	 * the lower and upper limit will have the same value
+	 * The values will exist on the boundary of the test range
+	 * The expected value that will be asserted is TRUE, as the ranges should intersect.
+	 */
+	
+	@Test(timeout = 1000) // timeout: 1000
+	public void testIntersectsWithinRangeToRightLowerEqualsUpper() {
+		boolean result = intersectRange.intersects(15,15);
+		assertTrue("The expected value is TRUE but returned: "+ result,result);
+	}
+	
+	/*
+	 * This will test the case when two doubles are used as the parameters for intersects.
+	 * the lower and upper limit will have the same value
+	 * The values will exist outside the boundaries of the test range 
+	 * The expected value that will be asserted is TRUE, as the ranges should intersect.
+	 */
+	
+	@Test(timeout = 1000) // timeout: 1000
+	public void testIntersectsOutsideRangeToRightLowerEqualsUpper() {
+		boolean result = intersectRange.intersects(-5,-5);
+		assertFalse("The expected value is FALSE but returned: "+ result,result);
+	}
+	
+	/*
+	 * This will test the case when two doubles are used as the parameters for intersects.
+	 * The doubles will both be within the range and will not satisfy the conditions that lower <= upper
+	 * The expected value that will be asserted is FALSE, as the input is invalid.
+	 */
+	
+	@Test(timeout = 1000) // timeout: 1000
+	public void testIntersectsDoublesWithinRangeLowerGreaterThanUpper() {
+		boolean result = intersectRange.intersects(14.5,10.5);
+		assertFalse("The expected value is FALSE but returned: "+ result,result);
+	}	
+	
+	/*
+	 * This will test the case when two doubles are used as the parameters for intersects.
+	 * the double for lower will be outside the test range on the right side
+	 * The double for upper will be within the test range
+	 * and will not satisfy the conditions that lower <= upper
+	 * The expected value that will be asserted is FALSE, as the input is invalid.
+	 */
+	
+	@Test(timeout = 1000) // timeout: 1000
+	public void testIntersectsDoublesOnRightLowerGreaterThanUpper() {
+		boolean result = intersectRange.intersects(20,10.5);
+		assertFalse("The expected value is FALSE but returned: "+ result,result);
+	}	
+	
+	/*
+	 * This will test the case when two doubles are used as the parameters for intersects.
+	 * the double for lower will be outside the test range on the right side
+	 * The double for upper will be within the test range
+	 * and will not satisfy the conditions that lower <= upper
+	 * The expected value that will be asserted is FALSE, as the input is invalid.
+	 */
+	
+	@Test(timeout = 1000) // timeout: 1000
+	public void testIntersectsDoublesOnLeftLowerGreaterThanUpper() {
+		boolean result = intersectRange.intersects(5.5,-5.5);
+		assertFalse("The expected value is FALSE but returned: "+ result,result);
+	}	
+	
+	
+	
+	
+	/*
+	 * This will test the case when two doubles are used as the parameters for intersects.
+	 * One double will be within the range on the right side and the doubles will satisfy the conditions that lower <= upper 
+	 * The expected value that will be asserted is TRUE, as the ranges should intersect.
+	 */
+	
+	@Test(timeout = 1000) // timeout: 1000
+	public void testIntersectsWithinRangeToRight() {
+		boolean result = intersectRange.intersects(14.5,20);
+		assertTrue("The expected value is TRUE but returned: "+ result,result);
+	}
+	
+	
+	
+	/*
+	 * This will test the case when two doubles are used as the parameters for intersects.
+	 * One double will be within the range on the left side and the doubles will satisfy the conditions that lower <= upper
+	 * The expected value that will be asserted is TRUE, as the ranges should intersect.
+	 */
+	
+	@Test(timeout = 1000) // timeout: 1000
+	public void testIntersectsWithinRangeToLeft() {
+		boolean result = intersectRange.intersects(-5.2,5.2);
+		assertTrue("The expected value is TRUE but returned: "+ result,result);
+	}
+	
+	/*
+	 * This will test the case when two doubles are used as the parameters for intersects.
+	 * the upper value will be equal to the bound of the range on the left side and 
+	 * the doubles will satisfy the conditions that lower <= upper 
+	 * The expected value that will be asserted is TRUE, as the ranges should intersect.
+	 */
+	
+	@Test(timeout = 1000) // timeout: 1000
+	public void testIntersectsEqualRangeToLeft() {
+		boolean result = intersectRange.intersects(-5.2,5);
+		assertTrue("The expected value is TRUE but returned: "+ result,result);
+	}
+	
+	/*
+	 * This will test the case when two doubles are used as the parameters for intersects.
+	 * The doubles will be outside the test range, and the doubles will satisfy the conditions that lower <= upper
+	 * The expected value that will be asserted is FALSE, as the ranges should not intersect.
+	 */
+	
+	@Test(timeout = 1000) // timeout: 1000
+	public void testIntersectsOutsideRange() {
+		boolean result = intersectRange.intersects(-15.5,-5);
+		assertFalse("The expected value is FALSE but returned: "+ result,result);
+	}
+	// ------- End of tests for intersects(double, double) -------		
 	// -----------------------------------------------------------------------------------------
 	// End of Test Code
 	// -----------------------------------------------------------------------------------------
