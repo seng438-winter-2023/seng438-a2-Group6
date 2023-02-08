@@ -2,12 +2,12 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#:      |     |
+| Group \#:      |  6   |
 | -------------- | --- |
-| Student Names: |     |
-|                |     |
-|                |     |
-|                |     |
+| Student Names: |  Maarya Ahmed   |
+|                |  Hannah Son   |
+|                |  Jinsu Kwak   |
+|                |  Jack Li   |
 
 # 1 Introduction
 
