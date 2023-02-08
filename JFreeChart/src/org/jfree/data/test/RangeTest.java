@@ -13,7 +13,7 @@ public class RangeTest {
     private Range rangeNegativeLB;		// Assume Lower Bound is -1000
     private Range rangeLarge;
     private Range intersectRange;
-    private Rangw exampleRange2
+    private Range exampleRange2;
     
     @BeforeClass public static void setUpBeforeClass() throws Exception {
     }
