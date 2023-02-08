@@ -13,7 +13,7 @@ public class RangeTest {
     private Range rangeNegativeLB;		// Assume Lower Bound is -1000
     private Range rangeLarge;
     private Range intersectRange;
-    private int maarya; //to test
+    private Rangw exampleRange2
     
     @BeforeClass public static void setUpBeforeClass() throws Exception {
     }
@@ -363,6 +363,86 @@ public class RangeTest {
 		assertFalse("The expected value is FALSE but returned: "+ result,result);
 	}
 	// ------- End of tests for intersects(double, double) -------		
+	
+	//	 ------- Test for getLength() -------
+	
+	/*
+	 * This will test the getLength function by inputting two inputs as positive numbers
+	 * 
+	 */
+	@Test(timeout = 1000) // timeout: 1000
+	public void testGetLengthPosPosNum() {
+		exampleRange2 = new Range(1, 100);
+	    assertEquals("The length of the range is:",
+	    99, exampleRange2.getLength(), .000000001d); //expected output: 100-1=99
+	}
+	
+	/*
+	 * This will test the getLength function by inputting first number as negative and second number as postive
+	 * 
+	 */
+	@Test(timeout = 1000) // timeout: 1000
+	public void testGetLengthNegPosNum() {
+		exampleRange2 = new Range(-10, 5);
+	    assertEquals("The length of the range is:",
+	    15, exampleRange2.getLength(), .000000001d); //expected output: 100-1=99
+	}
+	
+	/*
+	 * This will test the getLength function by inputting two inputs as negative numbers
+	 * 
+	 */
+	@Test(timeout = 1000) // timeout: 1000
+	public void testGetLengthNegNegNum() {
+		exampleRange2 = new Range(-6, -5);
+	    assertEquals("The length of the range is:",
+	    1, exampleRange2.getLength(), .000000001d); //expected output: 100-1=99
+	}
+	
+	/*
+	 * This will test the getLength function by inputting two inputs as zeros
+	 * 
+	 */
+	@Test(timeout = 1000) // timeout: 1000
+	public void testGetLengthZeroZeroNum() {
+		exampleRange2 = new Range(0, 0);
+	    assertEquals("The length of the range is:",
+	    0, exampleRange2.getLength(), .000000001d); //expected output: 100-1=99
+	}
+	
+	/*
+	 * This will test the getLength function by inputting first number as zero and second number as positive number
+	 * 
+	 */
+	@Test(timeout = 1000) // timeout: 1000
+	public void testGetLengthZeroPosoNum() {
+		exampleRange2 = new Range(0, 5);
+	    assertEquals("The length of the range is:",
+	    5, exampleRange2.getLength(), .000000001d); //expected output: 100-1=99
+	}
+	
+	
+	/*
+	 * This will test the getLength function by inputting first number as negative number and second number as zero
+	 * 
+	 */
+	@Test(timeout = 1000) // timeout: 1000
+	public void testGetLengthNegZeroNum() {
+		exampleRange2 = new Range(-8, 0);
+	    assertEquals("The length of the range is:",
+	    8, exampleRange2.getLength(), .000000001d); //expected output: 100-1=99
+	}
+	
+//	@Test(timeout = 1000) // timeout: 1000
+//	public void testGetLengthPosNegNum() {
+//		exampleRange2 = new Range(7, -10);
+//	    assertEquals("The length of the range is:",
+//	    -17, exampleRange2.getLength(), .000000001d); //expected output: -5+6=1
+//	}
+	
+	// ------- End of tests for getLength() -------	
+	
+	
 	// -----------------------------------------------------------------------------------------
 	// End of Test Code
 	// -----------------------------------------------------------------------------------------
