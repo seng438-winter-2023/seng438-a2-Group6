@@ -7,7 +7,7 @@ import org.jfree.data.Values2D;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 
-public class DataUtilitesTest {
+public class DataUtilitiesTest {
 	
 	 // -----------------------------------------------------------------------------------------
 	 // Given Example Test Code from LAB Document
