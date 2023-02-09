@@ -364,8 +364,8 @@ public class RangeTest {
 	}
 	// ------- End of tests for intersects(double, double) -------		
 	
-	//	 ------- Test for getLength() -------
 	
+		//	 ------- Test for getLength() -------
 	/*
 	 * This will test the getLength function by inputting two inputs as positive numbers
 	 * 
@@ -385,7 +385,7 @@ public class RangeTest {
 	public void testGetLengthNegPosNum() {
 		exampleRange2 = new Range(-10, 5);
 	    assertEquals("The length of the range is:",
-	    15, exampleRange2.getLength(), .000000001d); //expected output: 100-1=99
+	    15, exampleRange2.getLength(), .000000001d); 
 	}
 	
 	/*
@@ -396,7 +396,7 @@ public class RangeTest {
 	public void testGetLengthNegNegNum() {
 		exampleRange2 = new Range(-6, -5);
 	    assertEquals("The length of the range is:",
-	    1, exampleRange2.getLength(), .000000001d); //expected output: 100-1=99
+	    1, exampleRange2.getLength(), .000000001d); 
 	}
 	
 	/*
@@ -407,7 +407,7 @@ public class RangeTest {
 	public void testGetLengthZeroZeroNum() {
 		exampleRange2 = new Range(0, 0);
 	    assertEquals("The length of the range is:",
-	    0, exampleRange2.getLength(), .000000001d); //expected output: 100-1=99
+	    0, exampleRange2.getLength(), .000000001d); 
 	}
 	
 	/*
@@ -418,9 +418,8 @@ public class RangeTest {
 	public void testGetLengthZeroPosoNum() {
 		exampleRange2 = new Range(0, 5);
 	    assertEquals("The length of the range is:",
-	    5, exampleRange2.getLength(), .000000001d); //expected output: 100-1=99
+	    5, exampleRange2.getLength(), .000000001d); 
 	}
-	
 	
 	/*
 	 * This will test the getLength function by inputting first number as negative number and second number as zero
@@ -430,18 +429,10 @@ public class RangeTest {
 	public void testGetLengthNegZeroNum() {
 		exampleRange2 = new Range(-8, 0);
 	    assertEquals("The length of the range is:",
-	    8, exampleRange2.getLength(), .000000001d); //expected output: 100-1=99
+	    8, exampleRange2.getLength(), .000000001d); 
 	}
 	
-//	@Test(timeout = 1000) // timeout: 1000
-//	public void testGetLengthPosNegNum() {
-//		exampleRange2 = new Range(7, -10);
-//	    assertEquals("The length of the range is:",
-//	    -17, exampleRange2.getLength(), .000000001d); //expected output: -5+6=1
-//	}
-	
-	// ------- End of tests for getLength() -------	
-	
+	// ------- End of tests for getLength() -------		
 	
 	// -----------------------------------------------------------------------------------------
 	// End of Test Code
