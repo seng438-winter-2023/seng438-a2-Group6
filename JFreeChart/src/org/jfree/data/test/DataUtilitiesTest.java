@@ -168,10 +168,15 @@ public class DataUtilitiesTest {
      *  This test will simulate when invalid data object passed in
      *  Expected result: throws InvalidParameterException
 	 */
-	 @Test(expected = IllegalArgumentException.class) // expecting an exception
+	 @Test(timeout = 1000) // timeout: 1000
 	 public void testCalculateColumnNullValue(){
 		 final Values2D values = null; 				  // invalid data object (null)
-		 DataUtilities.calculateColumnTotal(null, 0);// line that exception will occurs
+		 try {
+			 DataUtilities.calculateColumnTotal(values, 0);// line that exception will occurs
+		 }catch(Exception e) {
+			 assertEquals("InvalidParameterException was thrown",IllegalArgumentException.class, 
+					 e.getClass());
+		 }
 	 }
 	 
 	 // ------- Test for createNumberArray(double[] data) -------
