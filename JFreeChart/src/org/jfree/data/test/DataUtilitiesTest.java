@@ -445,7 +445,268 @@ public class DataUtilitiesTest {
 				 expected, testArray);
 	 }
 	// ------- End of Test for createNumberArray2D(double[][] data) -------
+		 
+	// ------- Test for calculateRowTotal(Values2D, int) -------
 	 
+	 /**
+	  * This test calculates the total row amount in the row with one column
+	  * 
+	  */
+	 @Test
+	 public void calculateRowTotalForOneColumn() {
+	     // setup
+	     Mockery mockingContext = new Mockery();
+	     final Values2D values = mockingContext.mock(Values2D.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	             one(values).getRowCount();
+	             will(returnValue(1));
+	             
+	             one(values).getColumnCount();
+	             will(returnValue(1));
+	             
+	             one(values).getValue(0, 0);
+	             will(returnValue(3));
+	         }
+	     });
+	     double result = DataUtilities.calculateRowTotal(values, 0);
+	     // verify
+	     assertEquals(result, 3.0, .000000001d);
+	     // tear-down: NONE in this test method
+	 }
+	 
+	 /**
+	  * This test calculates the total row amount in the row with five column
+	  * 
+	  */
+	 @Test
+	 public void calculateRowTotalForFiveColumn() {
+	     // setup
+	     Mockery mockingContext = new Mockery();
+	     final Values2D values = mockingContext.mock(Values2D.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	             one(values).getRowCount();
+	             will(returnValue(1));
+	             
+	             one(values).getColumnCount();
+	             will(returnValue(5));
+	             
+	             one(values).getValue(0, 0); //index row1 = 0, with column1 = 0
+	             will(returnValue(3));
+	             
+	             one(values).getValue(0, 1); //index row1 = 0, with column2 = 1
+	             will(returnValue(3));
+	             
+	             one(values).getValue(0, 2); //index row1 = 0, with column3 = 2
+	             will(returnValue(3));
+	             
+	             one(values).getValue(0, 3); //index row1 = 0, with column4 = 3
+	             will(returnValue(5));
+	             
+	             one(values).getValue(0, 4); //index row1 = 0, with column5 = 4
+	             
+	             
+	         }
+	     });
+	     double result = DataUtilities.calculateRowTotal(values, 0);
+	     // verify
+	     assertEquals(result, 16.0, .000000001d);
+	     // tear-down: NONE in this test method
+	 }
+	 
+	 /**
+	  * This test calculates the total row amount with having two rows and two columns
+	  * 
+	  */
+	 @Test
+	 public void calculateRowTotalForTwoRowsTwoColumns() {
+	     // setup
+	     Mockery mockingContext = new Mockery();
+	     final Values2D values = mockingContext.mock(Values2D.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	             one(values).getRowCount();
+	             will(returnValue(2));
+	             
+	             one(values).getColumnCount();
+	             will(returnValue(2));
+	             
+	             one(values).getValue(0, 0); 
+	             will(returnValue(3));
+	             
+	             one(values).getValue(0, 1); 
+	             will(returnValue(2));
+	             
+	             one(values).getValue(1, 0); 
+	             will(returnValue(3));
+	             
+	             one(values).getValue(1, 1); 
+	             will(returnValue(1));
+	          
+	         }
+	     });
+	     double result = DataUtilities.calculateRowTotal(values, 0);
+	     // verify
+	     assertEquals(result, 5.0, .000000001d);
+	     // tear-down: NONE in this test method
+	 }
+	 
+	 /**
+	  * This test calculates the total row amount with having 1 row and 3 columns all having values of zero
+	  */
+	 @Test
+	 public void calculateRowTotalForThreeColumnWithAllZeroes() {
+	     // setup
+	     Mockery mockingContext = new Mockery();
+	     final Values2D values = mockingContext.mock(Values2D.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	             one(values).getRowCount();
+	             will(returnValue(1));
+	             
+	             one(values).getColumnCount();
+	             will(returnValue(3));
+	             
+	             one(values).getValue(0, 0); //index row1 = 0, with column1 = 0
+	             will(returnValue(0));
+	             
+	             one(values).getValue(0, 1); //index row1 = 0, with column2 = 1
+	             will(returnValue(0));
+	             
+	             one(values).getValue(0, 2); //index row1 = 0, with column1 = 0
+	             will(returnValue(0));
+	             
+	         }
+	     });
+	     double result = DataUtilities.calculateRowTotal(values, 0);
+	     // verify
+	     assertEquals(result, 0.0, .000000001d);
+	     // tear-down: NONE in this test method
+	 }
+	 
+	 /**
+	  * This test calculates the total row amount with having 1 row and 4 columns all having values that add up to zero, so 3, -3, 4, -4
+	  */
+	 @Test
+	 public void calculateRowTotalForFourColumnWithAddingToZero() {
+	     // setup
+	     Mockery mockingContext = new Mockery();
+	     final Values2D values = mockingContext.mock(Values2D.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	             one(values).getRowCount();
+	             will(returnValue(1));
+	             
+	             one(values).getColumnCount();
+	             will(returnValue(4));
+	             
+	             one(values).getValue(0, 0); //index row1 = 0, with column1 = 0
+	             will(returnValue(3));
+	             
+	             one(values).getValue(0, 1); //index row1 = 0, with column2 = 1
+	             will(returnValue(-3));
+	             
+	             one(values).getValue(0, 2); //index row1 = 0, with column1 = 0
+	             will(returnValue(-4));
+	             
+	             one(values).getValue(0, 3); //index row1 = 0, with column1 = 0
+	             will(returnValue(4));
+	             
+	         }
+	     });
+	     double result = DataUtilities.calculateRowTotal(values, 0);
+	     // verify
+	     assertEquals(result, 0.0, .000000001d);
+	     // tear-down: NONE in this test method
+	 }
+	 
+	 /**
+	  * This test calculates the total row amount with having 1 row and 3columns that have a total row count as a negative value
+	  */
+	 @Test
+	 public void calculateRowTotalForThreeColumnNegativeValue() {
+	     // setup
+	     Mockery mockingContext = new Mockery();
+	     final Values2D values = mockingContext.mock(Values2D.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	             one(values).getRowCount();
+	             will(returnValue(1));
+	             
+	             one(values).getColumnCount();
+	             will(returnValue(3));
+	             
+	             one(values).getValue(0, 0); //index row1 = 0, with column1 = 0
+	             will(returnValue(-3));
+	             
+	             one(values).getValue(0, 1); //index row1 = 0, with column2 = 1
+	             will(returnValue(-3));
+	             
+	             one(values).getValue(0, 2); //index row1 = 0, with column1 = 0
+	             will(returnValue(-6));
+	         }
+	     });
+	     double result = DataUtilities.calculateRowTotal(values, 0);
+	     // verify
+	     assertEquals(result, -12.0, .000000001d);
+	     // tear-down: NONE in this test method
+	 }
+	 
+	 
+	 /**
+	  * This test calculates the total row amount with having 1 row and 3 columns that have a total row count as a positive value
+	  */
+	 @Test
+	 public void calculateRowTotalForThreeColumnPositiveValue() {
+	     // setup
+	     Mockery mockingContext = new Mockery();
+	     final Values2D values = mockingContext.mock(Values2D.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	             one(values).getRowCount();
+	             will(returnValue(1));
+	             
+	             one(values).getColumnCount();
+	             will(returnValue(3));
+	             
+	             one(values).getValue(0, 0); //index row1 = 0, with column1 = 0
+	             will(returnValue(1));
+	             
+	             one(values).getValue(0, 1); //index row1 = 0, with column2 = 1
+	             will(returnValue(2));
+	             
+	             one(values).getValue(0, 2); //index row1 = 0, with column1 = 0
+	             will(returnValue(3));
+	         }
+	     });
+	     double result = DataUtilities.calculateRowTotal(values, 0);
+	     // verify
+	     assertEquals(result, 6.0, .000000001d);
+	     // tear-down: NONE in this test method
+	 }
+	 
+	 
+	 /*
+	     *  This test will simulate when invalid data object passed in so when Values2d is NULL
+	     *  Expected result: throws InvalidParameterException
+	*/
+		 @Test
+		 public void testCalculateRowIllegalArgumment(){
+		     final Values2D values = null;
+		     try {
+				 DataUtilities.calculateRowTotal(values, 0);// line that exception will occurs
+			 }catch(Exception e) {
+				 assertEquals("InvalidParameterException was thrown",IllegalArgumentException.class, 
+						 e.getClass());
+			 }
+		 }
+		 
+			
+	 
+	// ------- End of Test for calculateRowTotal(Values2D, int) -------
+	 
+	
 	 // -----------------------------------------------------------------------------------------
 	 // End of Test Code
 	 // -----------------------------------------------------------------------------------------
