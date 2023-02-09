@@ -23,7 +23,10 @@ Range Class Test Cases Methods:
 
 <img width="856" alt="Screen Shot 2023-02-09 at 1 05 07 PM" src="https://user-images.githubusercontent.com/56771715/217925024-5833705c-e83f-4876-ad22-a90100f469dd.png">
 
+Data Utilities Class Test Cases Method:
 
+
+<img width="600" alt="Screen Shot 2023-02-09 at 1 07 09 PM" src="https://user-images.githubusercontent.com/56771715/217925446-c8d3e978-93e6-4cb5-9ff8-08da637c2383.png">
 
 
 
