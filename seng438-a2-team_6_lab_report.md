@@ -19,45 +19,12 @@ Text…
 
 # 3 Test cases developed
 
-Method: getLength()
-Equivalent Class Partition
-Actual Output: Pass/Fail
-testGetLengthPosPosNum()
-First number positive: 1
-Second number positive: 100
-Range(1, 100)
-Expected Output: 100-1=99
-Pass
-testGetLengthNegPosNum()
-First number negative: -10
-Second number positive: 5
-Range(-10, 5)
-Expected Output: 5-(-10)=15
-Pass
-testGetLengthNegNegNum()
-First number negative: -6
-Second number negative: -5
-Range(-6, -5)
-Expected Output: 5-(-6)=1
-Pass
-testGetLengthZeroZeroNum()
-First number: 0
-Second number: 0
-Range(0, 0)
-Expected Output: 0 - 0=0
-Pass
-testGetLengthZeroPosNum()
-First number: 0
-Second number positive: 5
-Range(0, 5)
-Expected Output: 5 - 0=0
-Pass
-testGetLengthNegZeroNum()
-First number negative: -8
-Second number: 0
-Range(-8, 0)
-Expected Output: 0-(-8)=8
-Pass
+
+
+<img width="856" alt="Screen Shot 2023-02-09 at 1 05 07 PM" src="https://user-images.githubusercontent.com/56771715/217925024-5833705c-e83f-4876-ad22-a90100f469dd.png">
+
+
+
 
 
 
