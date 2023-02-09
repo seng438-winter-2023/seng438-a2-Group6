@@ -454,7 +454,7 @@ public class DataUtilitiesTest {
 	  * 
 	  */
 	 @Test
-	 public void calculateRowTotalForOneColumn() {
+	 public void testCalculateRowTotalForOneColumn() {
 	     // setup
 	     Mockery mockingContext = new Mockery();
 	     final Values2D values = mockingContext.mock(Values2D.class);
@@ -481,7 +481,7 @@ public class DataUtilitiesTest {
 	  * 
 	  */
 	 @Test
-	 public void calculateRowTotalForThreeColumnPositiveValue() {
+	 public void testCalculateRowTotalForThreeColumnPositiveValue() {
 	     // setup
 	     Mockery mockingContext = new Mockery();
 	     final Values2D values = mockingContext.mock(Values2D.class);
@@ -515,7 +515,7 @@ public class DataUtilitiesTest {
 	  * This test calculates the total row amount with having 1 row and 3 columns all having values of zero
 	  */
 	 @Test
-	 public void calculateRowTotalForThreeColumnWithAllZeroes() {
+	 public void testCalculateRowTotalForThreeColumnWithAllZeroes() {
 	     // setup
 	     Mockery mockingContext = new Mockery();
 	     final Values2D values = mockingContext.mock(Values2D.class);
@@ -548,7 +548,7 @@ public class DataUtilitiesTest {
 	  * This test calculates the total row amount with having 1 row and 4 columns all having values that add up to zero, so 3, -3, 4, -4
 	  */
 	 @Test
-	 public void calculateRowTotalForFourColumnWithAddingUpToZero() {
+	 public void testCalculateRowTotalForFourColumnWithAddingUpToZero() {
 	     // setup
 	     Mockery mockingContext = new Mockery();
 	     final Values2D values = mockingContext.mock(Values2D.class);
@@ -584,7 +584,7 @@ public class DataUtilitiesTest {
 	  * This test calculates the total row amount with having 1 row and 3columns that have a total row count as a negative value
 	  */
 	 @Test
-	 public void calculateRowTotalForThreeColumnNegativeValue() {
+	 public void testCalculateRowTotalForThreeColumnNegativeValue() {
 	     // setup
 	     Mockery mockingContext = new Mockery();
 	     final Values2D values = mockingContext.mock(Values2D.class);
