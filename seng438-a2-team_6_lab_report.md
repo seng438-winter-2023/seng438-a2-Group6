@@ -21,7 +21,7 @@ Text…
 
 Range Class Test Cases Methods:
 
-<img width="856" alt="Screen Shot 2023-02-09 at 1 05 07 PM" src="https://user-images.githubusercontent.com/56771715/217925024-5833705c-e83f-4876-ad22-a90100f469dd.png">
+<img width="700" alt="Screen Shot 2023-02-09 at 1 05 07 PM" src="https://user-images.githubusercontent.com/56771715/217925024-5833705c-e83f-4876-ad22-a90100f469dd.png">
 
 Data Utilities Class Test Cases Method:
 
