@@ -11,7 +11,7 @@
 
 # 1 Introduction
 
-Text…
+The goal of this assignment was to familarize ourselves the basics of automated unit testing with a focus on testing the specific requirements for each method. The tool used in this assignment is JUnit, a tool that is part of the XUnit framework family. 
 
 # 2 Detailed description of unit test strategy
 
