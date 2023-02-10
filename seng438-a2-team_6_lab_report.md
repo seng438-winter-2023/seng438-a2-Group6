@@ -164,7 +164,16 @@ Equivalent Class Partitioning and Boundary Values:
 Data Utilities Class Test Cases Method:
 
 
-<img width="600" alt="Screen Shot 2023-02-09 at 1 07 09 PM" src="https://user-images.githubusercontent.com/56771715/217925446-c8d3e978-93e6-4cb5-9ff8-08da637c2383.png">
+| Method: calculateRowTotal(Values2D, int) |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
+| --------------------------------------------- | --- | --- |
+| testCalculateRowTotalForOneColumn() | 1 row, 1 column, value of 3 | Fail |
+| testCalculateRowTotalForThreeColumnPositiveValue() | 1 row, 3 column, values:3+3+3=+9.0 | Fail |
+| testCalculateRowTotalForThreeColumnWithAllZeroes() | 1 row, 3 column, values: 0+0+0=0.0  | Pass |
+| testCalculateRowTotalForFourColumnWithAddingUpToZero() | 1 row, 4  column, values: 3+(-3)+(-4)+4=0.0| Fail |
+| testCalculateRowTotalForThreeColumnNegativeValue() | 1 row, 1 column, values: (-3)+(-3)+(-6)=-12.0 | Fail |
+| testCalculateRowIllegalArguement() | Values2D values = null; Boundary;  Null object is invalid data object, Expected: InvalidParameterException | Fail |
+
+
 
 <img width="600" alt="Screen Shot 2023-02-09 at 7 47 09 PM" src="https://user-images.githubusercontent.com/77519521/217987542-90d7f8ff-050d-4ace-94f1-a47dfeca4c7c.jpg">
 
