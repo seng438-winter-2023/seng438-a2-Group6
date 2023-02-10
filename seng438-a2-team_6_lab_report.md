@@ -42,9 +42,12 @@ Equivalent Class Partitioning:
   -First number is negative, second number is zero -> Range(-, 0):Output:0--5=5:PASS
 
 
+
+
 Test Case for Range Class: contains(double): boolean
 
 Equivalent Class Partitioning and Boundary Value:
+
 
   -Input is above upper boundary (AUB): Should return false
   
@@ -61,11 +64,16 @@ Equivalent Class Partitioning and Boundary Value:
   -Input is below lower boundary (BLB): Should return false
 
 
+
+
 DATA UTILITIES CLASS:
 
 Test Case for DataUtilities Class: getCumulativePercentages(KeyedValues): KeyedValues
 
+
 Equivalent Class Partitioning and Boundary Value:
+
+
   -Input is null: should throw InvalidParameterException
   
   -Input is an empty KeyedValues object: should return valid KeyedValues object 
