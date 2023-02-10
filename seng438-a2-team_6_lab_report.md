@@ -11,7 +11,7 @@
 
 # 1 Introduction
 
-The goal of this assignment was to familarize ourselves the basics of automated unit testing with a focus on testing the specific requirements for each method. The tool used in this assignment is JUnit, a tool that is part of the XUnit framework family. 
+The goal of this assignment was to familarize ourselves the basics of automated unit testing with a focus on testing the specific requirements for each method. The tool used in this assignment is JUnit, a tool that is part of the XUnit framework family. JUnit is the most common testing framework to use in the language of Java. We also used JMocks in Java to test code development. More specifically, we mocked objects to test the code. The SUT is JFreeChart which is an open-source Java framework to for chart calculation, creation, and display.This lab consists of three sections. The first section focuses on familiarization. The second section is dedicated to creating unit tests based on the requirements outlined in Javadocs. Finally, once the test suites have been completed, the last stage involves running the tests on multiple versions of the system under test and collecting the results.
 
 # 2 Detailed description of unit test strategy
 
