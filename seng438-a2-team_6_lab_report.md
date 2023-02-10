@@ -15,6 +15,9 @@ The goal of this assignment was to familarize ourselves the basics of automated 
 
 # 2 Detailed description of unit test strategy
 
+When starting to create unit tests, it is important to first plan out what functionalities you would like to test within the method of testing. This is where a detailed unit test strategy comes into play. We used equivalent class partitioning and boundary value analysis to arrive at the current tests created. We used JUnit and JMocks to create and test our code. 
+
+
 RANGE CLASS:
 
 
