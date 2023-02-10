@@ -152,6 +152,7 @@ Each team member was assigned methods from both the Range Class and DataUtilitie
 
 
 Maarya Ahmed
+
      -Range Class:  
      
           -getLength(): double
@@ -162,6 +163,7 @@ Maarya Ahmed
           
           
 Hannah Son
+
      -Range Class:  
      
           -contains(double): boolean
@@ -172,6 +174,7 @@ Hannah Son
           
           
 Jinsu Kwak   
+
      -Range Class:  
      
           -combine(Range, Range): Range
@@ -183,7 +186,8 @@ Jinsu Kwak
           -calculateColumnTotal(Values2D, int): double
           
           
-Jack Li   
+Jack Li 
+
      -Range Class:  
      
           -intersects(double, double): boolean
