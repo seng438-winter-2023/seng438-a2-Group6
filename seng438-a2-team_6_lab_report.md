@@ -23,23 +23,23 @@ Test Case for Range Class: getLength():
 Equivalent Class Partitioning:
  
   
-      -First number in positive, second number positive -> Range(+, +6) →output: 6+5=11: PASS
+      -First number in positive, second number positive -> Range(+, +6) → expected output: 6+5 = 11 : PASS
   
-      -First number is positive, second number is negative -> Range(+, -) →-5+6=1: (DONE NOT WORK, GIVES ACC CODE ERROR)
+      -First number is positive, second number is negative -> Range(+, -) → expected output: -5+6 = 1 : (DOES NOT WORK, GIVES JAVA/SYNTAX CODE ERROR, INPUTTING NUMBERS INCORRECTLY WHICH IS WHY IT GIVES ERROR)
   
-      -First number is negative, second number is positive -> Range(-, +) →6--5=11:PASS
+      -First number is negative, second number is positive -> Range(-, +) → expected output: 6--5=11 : PASS
   
-      -First number is negative, second number is negative -> Range(-, -) → -2-(-4)=2:PASS
+      -First number is negative, second number is negative -> Range(-, -) → expected output: -2-(-4)=2 : PASS
   
-      -First number is zero, second number is zero -> Range(0, 0) →boundary Value, output = 0-0=0:PASS
+      -First number is zero, second number is zero -> Range(0, 0) →boundary Value; expected output: = 0-0=0 : PASS
   
-      -First number is zero, second number is positive -> Range(0, +):Output: 5-0=5:PASS
+      -First number is zero, second number is positive -> Range(0, +):expected Output: 5-0=5: PASS
   
-      -First number is positive, second number is zero -> Range(+, 0):Output:0-5=-5(DOES NOT WORK, GIVES ACC CODE ERROR)
+      -First number is positive, second number is zero -> Range(+, 0):expected Output:0-5=-5(DOES NOT WORK, GIVES JAVA/SYNTAX CODE ERROR, INPUTTING NUMBERS INCORRECTLY WHICH IS WHY IT GIVES ERROR)
   
-      -First number is zero, second number is negative -> Range(0, -):-5-0=-5(DOES NOT WORK, GIVES ACC CODE ERROR)
+      -First number is zero, second number is negative -> Range(0, -): expected output: -5-0=-5 (DOES NOT WORK, GIVES JAVA/SYNTAX CODE ERROR, INPUTTING NUMBERS INCORRECTLY WHICH IS WHY IT GIVES ERROR)
   
-      -First number is negative, second number is zero -> Range(-, 0):Output:0--5=5:PASS
+      -First number is negative, second number is zero -> Range(-, 0):expected Output: 0-(-5)=5 : PASS
 
 
 
@@ -92,11 +92,22 @@ Equivalent Class Partitioning and Boundary Value:
   
       -Input is a KeyedValues object with mix of int and double values:  should return valid KeyedValues object 
   
+Test Case for DataUtilities Class: calculateRowTotal(Values2D, int):
 
 
-# 3 Test cases developed
+Equivalent Class Partitioning and Boundary Values:
 
-Range Class Test Cases Methods:
+    -Calculate row total with 1 row and 1 column: with a value of 3→expected output = 3.0=> actual output: FAIL
+    
+    -Calculate row total with 1 row and 3 column with a positive value: with a values of 3+3+3→expected output = 9.0=> actual output: FAIL
+    
+    -Calculate row total with 1 row and 3 column: with a value of 0 in each column→expected output = 0.0=> actual output: PASS
+    
+    -Calculate row total with 1 row and 4 column where values add up to 0: (0,0)=3, (0,1) = -3, (0,2)= -4, (0,3)=4 →expected output = 0.0=> actual output: FAIL
+    
+    -Calculate row total with 1 row and 3 columns when the total of row value is a negative number: actual output: FAIL
+    
+    -Inputting NULL values as Value2D parameter: expected output: catch the exception; actual output: FAIL
 
 
 
