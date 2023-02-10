@@ -114,7 +114,7 @@ Equivalent Class Partitioning and Boundary Values:
 
 
 
-# Test Cases Dweveloped
+# 3 Test Cases Developed
 
 
 | Method: getLength() | Equivalence Class Partition/Boundary Value | Actual Output: Pass/Fail|
