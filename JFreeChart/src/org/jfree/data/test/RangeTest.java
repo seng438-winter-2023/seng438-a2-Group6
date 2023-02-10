@@ -443,7 +443,7 @@ public class RangeTest {
      	 */
     	@Test(timeout = 1000) // timeout: 1000
 	public void testContainsAboveUpperBoundaryOfRange() {
-		boolean actualResult = rangeNominal.contains(11);
+		boolean actualResult = rangeNomial.contains(11);
 		boolean expectedResult = false;
 		assertEquals("Checking when input is above upper boundary", expectedResult, actualResult);
 	}
@@ -454,7 +454,7 @@ public class RangeTest {
      	*/
     	@Test(timeout = 1000) // timeout: 1000
 	public void testContainsAtUpperBoundaryOfRange() {
-		boolean actualResult = rangeNominal.contains(10);
+		boolean actualResult = rangeNomial.contains(10);
 		boolean expectedResult = true;
 		assertEquals("Checking when input is at upper boundary", expectedResult, actualResult);
 	}
@@ -465,7 +465,7 @@ public class RangeTest {
 	 */
    	 @Test(timeout = 1000) // timeout: 1000
 	public void testContainsBelowUpperBoundaryOfRange() {
-		boolean actualResult = rangeNominal.contains(9);
+		boolean actualResult = rangeNomial.contains(9);
 		boolean expectedResult = true;
 		assertEquals("Checking when input is below upper boundary", expectedResult, actualResult);
 	}
@@ -476,7 +476,7 @@ public class RangeTest {
 	 */
 	@Test(timeout = 1000) // timeout: 1000
 	public void testContainsMiddleOfRange() {
-		boolean actualResult = rangeNominal.contains(0);
+		boolean actualResult = rangeNomial.contains(0);
 		boolean expectedResult = true;
 		assertEquals("Checking when input is in the middle of range", expectedResult, actualResult);
 	}
@@ -487,7 +487,7 @@ public class RangeTest {
    	*/
     	@Test(timeout = 1000) // timeout: 1000
 	public void testContainsAboveLowerBoundaryOfRange() {
-		boolean actualResult = rangeNominal.contains(-9);
+		boolean actualResult = rangeNomial.contains(-9);
 		boolean expectedResult = true;
 		assertEquals("Checking when input is above lower boundary ", expectedResult, actualResult);
 	}
@@ -498,7 +498,7 @@ public class RangeTest {
    	*/
     	@Test(timeout = 1000) // timeout: 1000
 	public void testContainsAtLowerBoundaryOfRange() {
-		boolean actualResult = rangeNominal.contains(-10);
+		boolean actualResult = rangeNomial.contains(-10);
 		boolean expectedResult = true;
 		assertEquals("Checking when input is at lower boundary", expectedResult, actualResult);
 	}
@@ -509,7 +509,7 @@ public class RangeTest {
      	*/
    	@Test(timeout = 1000) // timeout: 1000
 	public void testContainsBelowLowerBoundaryOfRange() {
-		boolean actualResult = rangeNominal.contains(-11);
+		boolean actualResult = rangeNomial.contains(-11);
 		boolean expectedResult = false;
 		assertEquals("Checking when input is below lower boundary", expectedResult, actualResult);
 	}
