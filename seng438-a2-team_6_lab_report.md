@@ -118,7 +118,7 @@ Equivalent Class Partitioning and Boundary Values:
 
 Range Class Test Cases Method:
 
-| Method: getLength() | Equivalence Class Partition/Boundary Value | Actual Output: Pass/Fail|
+| Method: getLength():double | Equivalence Class Partition/Boundary Value | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
 |testGetLengthPosPosNum() | First number positive: 1; Second number positive: 100; Range(1, 100); Expected Output: 100-1=99 | Pass |
 |testGetLengthNegPosNum()| First number negative: -10; Second number positive: 5; Range(-10, 5); Expected Output: 5-(-10)=15 | Pass |
@@ -140,6 +140,7 @@ Range Class Test Cases Method:
 |testContainsBelowLowerBoundaryOfRange() | Input is below lower boundary (BLB)| Pass |
 
 
+
 | Method: combine() |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
 | testCombineNoNullParametersLowerBound() | Inputs in middle of range (no null values) | Pass |
@@ -150,6 +151,7 @@ Range Class Test Cases Method:
 | testCombineSecondParameterNullUpperBound() | Second parameter is Null | Fail |
 | testCombineBothNullParametersLowerBound() | Both parameters are Null, Expected: NullPointerException | Pass |
 | testCombineBothNullParametersUpperBound() | Both parameters are Null, Expected: NullPointerException | Pass |
+
 
 | Method: getLowerBound() |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
@@ -165,7 +167,7 @@ Range Class Test Cases Method:
 Data Utilities Class Test Cases Method:
 
 
-| Method: calculateRowTotal(Values2D, int) |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
+| Method: calculateRowTotal(Values2D, int): double |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
 | testCalculateRowTotalForOneColumn() | 1 row, 1 column, value of 3 | Fail |
 | testCalculateRowTotalForThreeColumnPositiveValue() | 1 row, 3 column, values:3+3+3=+9.0 | Fail |
@@ -187,6 +189,7 @@ Data Utilities Class Test Cases Method:
 |testGetCumulativePercentagesLastValueZero() |Input is a KeyedValues object with last value is zero | Fail |
 |testGetCumulativePercentagesIntAndDouble() | Input is a KeyedValues object with a mix of int and double values| Fail |
 
+
 | Method: calculateColumnTotal() |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
 | testCalculateColumnTotalFiveValues()          | Inputs in middle of range (5 pairs, positive values with positive Index number) | Pass |
@@ -202,7 +205,7 @@ you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
-Each team member was assigned methods from both the Range Class and DataUtilities Class, for which they designed, coded, and ran the test cases. 
+The group was expected to test 5 methods from the Range Class and 5 methods from the Data Utilities Class. Each team member was assigned methods from both the Range Class and DataUtilities Class, for which they designed, coded, and ran the test cases. 
 
 
 Maarya Ahmed
