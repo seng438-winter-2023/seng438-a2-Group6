@@ -115,6 +115,16 @@ Equivalent Class Partitioning and Boundary Values:
 
 
 <img width="600" alt="Screen Shot 2023-02-09 at 1 05 07 PM" src="https://user-images.githubusercontent.com/56771715/217925024-5833705c-e83f-4876-ad22-a90100f469dd.png">
+| Method: getLength() | Equivalence Class Partition/Boundary Value | Actual Output: Pass/Fail|
+| --------------------------------------------- | --- | --- |
+|testGetLengthPosPosNum() | First number positive: 1; Second number positive: 100; Range(1, 100); Expected Output: 100-1=99 | Pass |
+|testGetLengthNegPosNum()| First number negative: -10; Second number positive: 5; Range(-10, 5); Expected Output: 5-(-10)=15 | Pass |
+|testGetLengthNegNegNum() | First number negative: -6; Second number negative: -5; Range(-6, -5); Expected Output: 5-(-6)=1 | Pass |
+|testGetLengthZeroZeroNum() | First number: 0; Second number: 0; Range(0, 0); Expected Output: 0 - 0=0 | Pass |
+|testGetLengthZeroPosNum() | First number: 0; Second number positive: 5; Range(0, 5); Expected Output: 5 - 0=0 | Pass |
+|testGetLengthNegZeroNum()| First number negative: -8; Second number: 0; Range(-8, 0); Expected Output: 0-(-8)=8 | Pass |
+
+
 
 | Method: contains(double):boolean | Equivalence Class Partition/Boundary Value | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
@@ -154,19 +164,7 @@ Data Utilities Class Test Cases Method:
 
 <img width="600" alt="Screen Shot 2023-02-09 at 1 07 09 PM" src="https://user-images.githubusercontent.com/56771715/217925446-c8d3e978-93e6-4cb5-9ff8-08da637c2383.png">
 
-
-| Method: getCumulativePercentages(KeyedValues):KeyedValues |  Equivalent Class Partition  | Actual Output: Pass/Fail|
-| --------------------------------------------- | --- | --- |
-|testGetCumulativePercentagesNull() | Input is null | Pass |
-|testGetCumulativePercentagesEmpty() | Input is an empty KeyedValues object | Pass |
-|testGetCumulativePercentagesOneValue() | Input is a KeyedValues object with one value (positive) | Fail |
-|testGetCumulativePercentagesFiveValues() | Input is a KeyedValues object with five values (postive) | Fail |
-|testGetCumulativePercentagesPositiveAndNegative() | Input is a KeyedValues object with both positive and negative values | Fail |
-|testGetCumulativePercentagesAllZero() | Input is a KeyedValues object with all zero values | Pass |
-|testGetCumulativePercentagesFirstValueZero() | Input is a KeyedValues object where first value is zero | Pass |
-|testGetCumulativePercentagesLastValueZero() | Input is a KeyedValues object where last value is zero | Fail |
-|testGetCumulativePercentagesIntAndDouble() | Input is a KeyedValues object with mix of int and double values | Fail |
-
+<img width="600" alt="Screen Shot 2023-02-09 at 7 47 09 PM" src="https://user-images.githubusercontent.com/77519521/217987542-90d7f8ff-050d-4ace-94f1-a47dfeca4c7c.jpg">
 
 | Method: calculateColumnTotal() |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
