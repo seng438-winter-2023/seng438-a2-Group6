@@ -15,7 +15,7 @@ The goal of this assignment was to familarize ourselves the basics of automated 
 
 # 2 Detailed description of unit test strategy
 
-When starting to create unit tests, it is important to first plan out what functionalities you would like to test within the method of testing. This is where a detailed unit test strategy comes into play. We used equivalent class partitioning and boundary value analysis to arrive at the current tests created. We used JUnit and JMocks to create and test our code. 
+When starting to create unit tests, it is important to first plan out what functionalities you would like to test within the method of testing. This is where a detailed unit test strategy comes into play. We used equivalent class partitioning and boundary value analysis to arrive at the current tests created. We used JUnit and JMocks to create and test our code. Below shows the planning and creating the different test cases that would test the method in test.
 
 
 RANGE CLASS:
@@ -198,10 +198,6 @@ Data Utilities Class Test Cases Method:
 | testCalculateColumnTotalNegativeColumnIndex() | Boundary, negative index is invalid input for Zero-Based Index. Expected: total of zero | Fail |
 | testCalculateColumnNullValue()                | Boundary, Null object is invalid data object, Expected: InvalidParameterException | Fail |
 
-
-// write down the name of the test methods and classes. Organize the based on
-the source code method // they test. identify which tests cover which partitions
-you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
