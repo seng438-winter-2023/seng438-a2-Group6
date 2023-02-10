@@ -23,15 +23,23 @@ Test Case for Range Class: getLength():
 Equivalent Class Partitioning:
  
 
-  -First number in positive, second number positive -> Range(+, +6) →output: 6+5=11: pass
+  -First number in positive, second number positive -> Range(+, +6) →output: 6+5=11: PASS
+  
   -First number is positive, second number is negative -> Range(+, -) →-5+6=1: (DONE NOT WORK, GIVES ACC CODE ERROR)
-  -First number is negative, second number is positive -> Range(-, +) →6--5=11:pass
-  -First number is negative, second number is negative -> Range(-, -) → -2-(-4)=2:pass
-  -First number is zero, second number is zero -> Range(0, 0) →boundary Value, output = 0-0=0:pass
-  -First number is zero, second number is positive -> Range(0, +):Output: 5-0=5:pass
+  
+  -First number is negative, second number is positive -> Range(-, +) →6--5=11:PASS
+  
+  -First number is negative, second number is negative -> Range(-, -) → -2-(-4)=2:PASS
+  
+  -First number is zero, second number is zero -> Range(0, 0) →boundary Value, output = 0-0=0:PASS
+  
+  -First number is zero, second number is positive -> Range(0, +):Output: 5-0=5:PASS
+  
   -First number is positive, second number is zero -> Range(+, 0):Output:0-5=-5(DOES NOT WORK, GIVES ACC CODE ERROR)
+  
   -First number is zero, second number is negative -> Range(0, -):-5-0=-5(DOES NOT WORK, GIVES ACC CODE ERROR)
-  -First number is negative, second number is zero -> Range(-, 0):Output:0--5=5:Pass
+  
+  -First number is negative, second number is zero -> Range(-, 0):Output:0--5=5:PASS
 
 
 Test Case for Range Class: contains(double): boolean
