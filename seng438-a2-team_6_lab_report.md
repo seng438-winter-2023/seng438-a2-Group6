@@ -22,24 +22,24 @@ Test Case for Range Class: getLength():
 
 Equivalent Class Partitioning:
  
-
-  -First number in positive, second number positive -> Range(+, +6) →output: 6+5=11: PASS
   
-  -First number is positive, second number is negative -> Range(+, -) →-5+6=1: (DONE NOT WORK, GIVES ACC CODE ERROR)
+      -First number in positive, second number positive -> Range(+, +6) →output: 6+5=11: PASS
   
-  -First number is negative, second number is positive -> Range(-, +) →6--5=11:PASS
+      -First number is positive, second number is negative -> Range(+, -) →-5+6=1: (DONE NOT WORK, GIVES ACC CODE ERROR)
   
-  -First number is negative, second number is negative -> Range(-, -) → -2-(-4)=2:PASS
+      -First number is negative, second number is positive -> Range(-, +) →6--5=11:PASS
   
-  -First number is zero, second number is zero -> Range(0, 0) →boundary Value, output = 0-0=0:PASS
+      -First number is negative, second number is negative -> Range(-, -) → -2-(-4)=2:PASS
   
-  -First number is zero, second number is positive -> Range(0, +):Output: 5-0=5:PASS
+      -First number is zero, second number is zero -> Range(0, 0) →boundary Value, output = 0-0=0:PASS
   
-  -First number is positive, second number is zero -> Range(+, 0):Output:0-5=-5(DOES NOT WORK, GIVES ACC CODE ERROR)
+      -First number is zero, second number is positive -> Range(0, +):Output: 5-0=5:PASS
   
-  -First number is zero, second number is negative -> Range(0, -):-5-0=-5(DOES NOT WORK, GIVES ACC CODE ERROR)
+      -First number is positive, second number is zero -> Range(+, 0):Output:0-5=-5(DOES NOT WORK, GIVES ACC CODE ERROR)
   
-  -First number is negative, second number is zero -> Range(-, 0):Output:0--5=5:PASS
+      -First number is zero, second number is negative -> Range(0, -):-5-0=-5(DOES NOT WORK, GIVES ACC CODE ERROR)
+  
+      -First number is negative, second number is zero -> Range(-, 0):Output:0--5=5:PASS
 
 
 
@@ -49,19 +49,19 @@ Test Case for Range Class: contains(double): boolean
 Equivalent Class Partitioning and Boundary Value:
 
 
-  -Input is above upper boundary (AUB): Should return false
+      -Input is above upper boundary (AUB): Should return false
   
-  -Input is at upper boundary (UB): Should return true
+      -Input is at upper boundary (UB): Should return true
   
-  -Input is at just below upper boundary (BUB): Should return true
+      -Input is at just below upper boundary (BUB): Should return true
   
-  -Input is in the middle of range (NOM): Should return true 
+      -Input is in the middle of range (NOM): Should return true 
   
-  -Input is at just above lower boundary (ALB): Should return true
+      -Input is at just above lower boundary (ALB): Should return true
   
-  -Input is at lower boundary (LB): Should return true
+      -Input is at lower boundary (LB): Should return true
   
-  -Input is below lower boundary (BLB): Should return false
+      -Input is below lower boundary (BLB): Should return false
 
 
 
@@ -74,23 +74,23 @@ Test Case for DataUtilities Class: getCumulativePercentages(KeyedValues): KeyedV
 Equivalent Class Partitioning and Boundary Value:
 
 
-  -Input is null: should throw InvalidParameterException
+      -Input is null: should throw InvalidParameterException
   
-  -Input is an empty KeyedValues object: should return valid KeyedValues object 
+      -Input is an empty KeyedValues object: should return valid KeyedValues object 
   
-  -Input is a KeyedValues object with one value (positive):  should return valid KeyedValues object 
+      -Input is a KeyedValues object with one value (positive):  should return valid KeyedValues object 
   
-  -Input is a KeyedValues object with five values (positive):  should return valid KeyedValues object 
+      -Input is a KeyedValues object with five values (positive):  should return valid KeyedValues object 
   
-  -Input is a KeyedValues object with both positive and negative values:  should return valid KeyedValues object 
+      -Input is a KeyedValues object with both positive and negative values:  should return valid KeyedValues object 
   
-  -Input is a KeyedValues object with all zero values:  should return valid KeyedValues object 
+      -Input is a KeyedValues object with all zero values:  should return valid KeyedValues object 
   
-  -Input is a KeyedValues object where first value is zero:  should return valid KeyedValues object 
+      -Input is a KeyedValues object where first value is zero:  should return valid KeyedValues object 
   
-  -Input is a KeyedValues object where last value is zero:  should return valid KeyedValues object 
+      -Input is a KeyedValues object where last value is zero:  should return valid KeyedValues object 
   
-  -Input is a KeyedValues object with mix of int and double values:  should return valid KeyedValues object 
+      -Input is a KeyedValues object with mix of int and double values:  should return valid KeyedValues object 
   
 
 
