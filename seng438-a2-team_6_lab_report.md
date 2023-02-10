@@ -116,6 +116,7 @@ Equivalent Class Partitioning and Boundary Values:
 
 # 3 Test Cases Developed
 
+Range Class Test Cases Method:
 
 | Method: getLength() | Equivalence Class Partition/Boundary Value | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
