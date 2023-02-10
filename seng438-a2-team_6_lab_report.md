@@ -112,11 +112,20 @@ Equivalent Class Partitioning and Boundary Values:
     
     -Inputting NULL values as Value2D parameter: expected output: catch the exception; actual output: FAIL
 
-# 3 Tests Cases Developed
+
 
 <img width="600" alt="Screen Shot 2023-02-09 at 1 05 07 PM" src="https://user-images.githubusercontent.com/56771715/217925024-5833705c-e83f-4876-ad22-a90100f469dd.png">
 
-<img width="600" alt="Screen Shot 2023-02-09 at 7 47 07 PM" src="https://user-images.githubusercontent.com/77519521/217987436-ed2df18f-0ee9-49fe-85ab-dd82ab8ed64c.jpg">
+| Method: contains(double):boolean | Equivalence Class Partition/Boundary Value | Actual Output: Pass/Fail|
+| --------------------------------------------- | --- | --- |
+|testContainsAboveUpperBoundaryOfRange() | Input is above upper boundary (AUB) | Pass |
+|testContainsAtUpperBoundaryOfRange() | Input is at upper boundary (UB) | Pass |
+|testContainsBelowUpperBoundaryOfRange() | Input is at just below upper boundary (BUB)| Pass |
+|testContainsMiddleOfRange() | Input is in the middle of range (NOM) | Pass |
+|testContainsAboveLowerBoundaryOfRange() | Input is at just above lower boundary (ALB) | Pass |
+|testContainsAtLowerBoundaryOfRange() | Input is at lower boundary (LB) | Pass |
+|testContainsBelowLowerBoundaryOfRange() | Input is below lower boundary (BLB)| Pass |
+
 
 | Method: combine() |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
