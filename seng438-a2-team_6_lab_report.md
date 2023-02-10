@@ -153,28 +153,47 @@ Each team member was assigned methods from both the Range Class and DataUtilitie
 
 Maarya Ahmed
      -Range Class:  
+     
           -getLength(): double
+          
      -DataUtilities Class:
+     
           -calculateRowTotal(Values2D, int): double
+          
           
 Hannah Son
      -Range Class:  
+     
           -contains(double): boolean
+          
      -DataUtilities Class:
-          -getCumulativePercentages(KeyedValues): KeyedValues          
+     
+          -getCumulativePercentages(KeyedValues): KeyedValues   
+          
           
 Jinsu Kwak   
      -Range Class:  
+     
           -combine(Range, Range): Range
+          
           -getLowerBound(): double
+          
      -DataUtilities Class:
+     
           -calculateColumnTotal(Values2D, int): double
+          
+          
 Jack Li   
      -Range Class:  
+     
           -intersects(double, double): boolean
+          
      -DataUtilities Class:
+     
           -createNumberArray(double[]): Number[]
+          
           -createNumberArray2D(double[][]): Number[][]
+          
           
           
 # 5 Difficulties encountered, challenges overcome, and lessons learned
