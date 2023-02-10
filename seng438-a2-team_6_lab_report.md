@@ -175,9 +175,6 @@ Data Utilities Class Test Cases Method:
 | testCalculateRowIllegalArguement() | Values2D values = null; Boundary;  Null object is invalid data object, Expected: InvalidParameterException | Fail |
 
 
-
-<img width="600" alt="Screen Shot 2023-02-09 at 7 47 09 PM" src="https://user-images.githubusercontent.com/77519521/217987542-90d7f8ff-050d-4ace-94f1-a47dfeca4c7c.jpg">
-
 | Method: getCumulativePercentages(KeyedValues):KeyedValues |  Equivalent Class Partition   | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
 |testGetCumulativePercentagesNull() |Input is null | Pass |
