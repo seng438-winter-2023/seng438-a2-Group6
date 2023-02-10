@@ -98,9 +98,32 @@ Equivalent Class Partitioning and Boundary Value:
 
 Range Class Test Cases Methods:
 
+
+
 <img width="600" alt="Screen Shot 2023-02-09 at 1 05 07 PM" src="https://user-images.githubusercontent.com/56771715/217925024-5833705c-e83f-4876-ad22-a90100f469dd.png">
 
 <img width="600" alt="Screen Shot 2023-02-09 at 7 47 07 PM" src="https://user-images.githubusercontent.com/77519521/217987436-ed2df18f-0ee9-49fe-85ab-dd82ab8ed64c.jpg">
+
+| Method: combine() |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
+| --------------------------------------------- | --- | --- |
+| testCombineNoNullParametersLowerBound() | Inputs in middle of range (no null values) | Pass |
+| testCombineNoNullParametersUpperBound() | Inputs in middle of range (no null values) | Fail |
+| testCombineFirstParameterNullLowerBound() | First parameter is Null | Pass |
+| testCombineFirstParameterNullUpperBound()| First parameter is Null | Fail |
+| testCombineSecondParameterNullLowerBound() | Second parameter is Null | Pass |
+| testCombineSecondParameterNullUpperBound() | Second parameter is Null | Fail |
+| testCombineBothNullParametersLowerBound() | Both parameters are Null, Expected: NullPointerException | Pass |
+| testCombineBothNullParametersUpperBound() | Both parameters are Null, Expected: NullPointerException | Pass |
+
+| Method: getLowerBound() |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
+| --------------------------------------------- | --- | --- |
+| testGetLowerBoundNominal() | input is at the middle of range (NOM) | Pass |
+| testGetLowerBoundPositive() | input range within Positive | Pass |
+| testGetLowerBoundPositiveUB() | input is at upper boundary (UB, +1000) | Pass |
+| testGetLowerBoundPositiveAUB() | input is at above upper boundary | Pass |
+| testGetLowerBoundNegative() | input range within Negative | Pass |
+| testGetLowerBoundNegativeLB() | input is at the lower boundary (LB, -1000) | Pass |
+| testGetLowerBoundNegativeBLB() | input is at below lower boundary (BLB) | Pass |
 
 
 Data Utilities Class Test Cases Method:
@@ -110,6 +133,13 @@ Data Utilities Class Test Cases Method:
 
 <img width="600" alt="Screen Shot 2023-02-09 at 7 47 09 PM" src="https://user-images.githubusercontent.com/77519521/217987542-90d7f8ff-050d-4ace-94f1-a47dfeca4c7c.jpg">
 
+| Method: calculateColumnTotal() |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
+| --------------------------------------------- | --- | --- |
+| testCalculateColumnTotalFiveValues()          | Inputs in middle of range (5 pairs, positive values with positive Index number) | Pass |
+| testCalculateColumnTotalNegative()            | Partition, all values are negative | Pass |
+| testCalculateColumnTotalEmpty()               | Boundary, Empty key value sets are invalid input. Expected: total of zero  | Pass |
+| testCalculateColumnTotalNegativeColumnIndex() | Boundary, negative index is invalid input for Zero-Based Index. Expected: total of zero | Fail |
+| testCalculateColumnNullValue()                | Boundary, Null object is invalid data object, Expected: InvalidParameterException | Fail |
 
 
 // write down the name of the test methods and classes. Organize the based on
