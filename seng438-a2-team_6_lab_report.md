@@ -67,6 +67,36 @@ Equivalent Class Partitioning and Boundary Value:
       -Input is below lower boundary (BLB): Should return false
 
 
+Test Case for Range Class: combine(): Range
+
+Equivalent Class Partitioning and Boundary Value:
+
+      -Both parameters are no null value
+
+      -First parameter is a null value
+
+      -Second parameter is a null value
+
+      -Both parameters are null value
+
+
+Test Case for Range Class: getLowerBound(): double
+
+Equivalent Class Partitioning and Boundary Value:
+
+      -input is at the middle of range (NOM)
+
+      -input is at upper boundary (UB, +1000)
+
+      -input is at above upper boundary (AUB)
+
+      -input is at the lower boundary (LB, -1000)
+
+      -input is at below lower boundary (BLB)
+
+      -input range within Positive 
+
+      -input range within Negative
 
 
 DATA UTILITIES CLASS:
@@ -112,6 +142,20 @@ Equivalent Class Partitioning and Boundary Values:
     
     -Inputting NULL values as Value2D parameter: expected output: catch the exception; actual output: FAIL
 
+
+Test Case for DataUtilities Class: calculateColumnTotal(Values2D, int): double
+
+Equivalent Class Partitioning and Boundary Values:
+
+     -input is at the middle of range (NOM)
+
+     -Partition, all values are negative
+
+     -Boundary, Empty key value sets are invalid input. Expected: total of zero
+
+     -Boundary, negative index is invalid input for Zero-Based Index. Expected: total of zero
+
+     -Boundary, Null object is invalid data object, Expected: InvalidParameterException
 
 
 # 3 Test Cases Developed
