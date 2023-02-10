@@ -264,7 +264,7 @@ public class RangeTest {
 	 */
 	
 	@Test(timeout = 1000) // timeout: 1000
-	public void testIntersectsOutsideRangeToRightLowerEqualsUpper() {
+	public void testIntersectsOutsideRangeToLeftLowerEqualsUpper() {
 		boolean result = intersectRange.intersects(-5,-5);
 		assertFalse("The expected value is FALSE but returned: "+ result,result);
 	}
@@ -358,7 +358,7 @@ public class RangeTest {
 	 */
 	
 	@Test(timeout = 1000) // timeout: 1000
-	public void testIntersectsOutsideRange() {
+	public void testIntersectsOutsideRangeToLeft() {
 		boolean result = intersectRange.intersects(-15.5,-5);
 		assertFalse("The expected value is FALSE but returned: "+ result,result);
 	}
