@@ -114,7 +114,9 @@ Equivalent Class Partitioning and Boundary Values:
 
 
 
-<img width="600" alt="Screen Shot 2023-02-09 at 1 05 07 PM" src="https://user-images.githubusercontent.com/56771715/217925024-5833705c-e83f-4876-ad22-a90100f469dd.png">
+# Test Cases Dweveloped
+
+
 | Method: getLength() | Equivalence Class Partition/Boundary Value | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
 |testGetLengthPosPosNum() | First number positive: 1; Second number positive: 100; Range(1, 100); Expected Output: 100-1=99 | Pass |
