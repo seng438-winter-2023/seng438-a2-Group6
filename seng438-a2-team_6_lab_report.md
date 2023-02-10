@@ -148,7 +148,7 @@ you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
-Each team member was assigned methods from both the Range Class and DataUtilities Class, for which they designed and coded the test cases
+Each team member was assigned methods from both the Range Class and DataUtilities Class, for which they designed, coded, and ran the test cases. 
 
 
 Maarya Ahmed
