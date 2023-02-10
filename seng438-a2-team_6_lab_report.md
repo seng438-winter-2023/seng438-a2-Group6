@@ -34,6 +34,35 @@ Equivalent Class Partitioning:
   -First number is negative, second number is zero -> Range(-, 0):Output:0--5=5:Pass
 
 
+Test Case for Range Class: contains(double): boolean
+
+Equivalent Class Partitioning and Boundary Value:
+
+  -Input is above upper boundary (AUB): Should return false
+  -Input is at upper boundary (UB): Should return true
+  -Input is at just below upper boundary (BUB): Should return true
+  -Input is in the middle of range (NOM): Should return true 
+  -Input is at just above lower boundary (ALB): Should return true
+  -Input is at lower boundary (LB): Should return true
+  -Input is below lower boundary (BLB): Should return false
+
+
+DATA UTILITIES CLASS:
+
+Test Case for DataUtilities Class: getCumulativePercentages(KeyedValues): KeyedValues
+
+Equivalent Class Partitioning and Boundary Value:
+	 -Input is null: should throw InvalidParameterException
+ 	-Input is an empty KeyedValues object: should return valid KeyedValues object 
+  -Input is a KeyedValues object with one value (positive):  should return valid KeyedValues object 
+	 -Input is a KeyedValues object with five values (positive):  should return valid KeyedValues object 
+  -Input is a KeyedValues object with both positive and negative values:  should return valid KeyedValues object 
+ 	-Input is a KeyedValues object with all zero values:  should return valid KeyedValues object 
+ 	-Input is a KeyedValues object where first value is zero:  should return valid KeyedValues object 
+ 	-Input is a KeyedValues object where last value is zero:  should return valid KeyedValues object 
+ 	-Input is a KeyedValues object with mix of int and double values:  should return valid KeyedValues object 
+
+
 # 3 Test cases developed
 
 Range Class Test Cases Methods:
