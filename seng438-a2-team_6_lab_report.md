@@ -98,6 +98,30 @@ Equivalent Class Partitioning and Boundary Value:
 
       -input range within Negative
 
+Test case for Range class: intersects(double, double):boolean
+
+Equivalent Class Partitioning and Boundary Value:
+
+      -Input has two values, with one inside the range and the other outside: Should return True
+      
+      -Input has two values, both on the right boundary of the range: Should return True
+      
+      -Input has two values, both equal values and outside the range to the left: Should return False
+      
+      -Input has two values, with the lower value being larger than the upper value, both values being within the range: Should return False
+      
+      -Input has two values, with the lower value outside the range on the right being larger than the upper value inside the range: Should return False
+      
+      -Input has two values, with the lower value being within the range and greater than the upper value which is outside the range to the left: Should return False
+      
+      -Input has two values, with the lower value being within the range and the upper value being outside the range to the right: Should return True
+      
+      -Input has two values, with the lower value being outside the range to the left and the upper value being within the range: Should return True
+      
+      -Input has two values, with the lower value being outside the range to the left and the upper value being on the left boundary of the range: Should return True
+      
+      -Input has two values, with both the values being outside the range to the left: Should return False
+      
 
 DATA UTILITIES CLASS:
 
@@ -158,6 +182,45 @@ Equivalent Class Partitioning and Boundary Values:
      -Boundary, Null object is invalid data object, Expected: InvalidParameterException
 
 
+Test case for DataUtilities class: getNumberArray(double []): NumberArray[]
+
+Equivalent Class Partitioning and Boundary Values:
+
+     -Input has a mix of positive and negative values: Should return a valid NumberArray[]
+     
+     -Input is null: Should return InvalidParameterException
+     
+     -Input has only positive values: Should return a valid NumberArray[]
+     
+     -Input only has negative values: Should return a valid NumberArray[]
+     
+     -Input is empty: Should return an empty, valid NumberArray[]
+     
+     -Input only has one element: Should return a valid NumberArray[]
+     
+     -Input has 10 elements: Should return a valid NumberArray[]
+
+Test case for DataUtilities class: getNumberArray2D(double [][]) NumberArray[][]
+
+Equivalent Class Partitioning and Boundary Values:
+     
+     -Input has a mix of positive and negative values: Should return a valid NumberArray[][]
+     
+     -Input is null: Should return InvalidParameterException
+     
+     -Input has only positive values: Should return a valid NumberArray[][]
+     
+     -Input has only negative values: Should return a valid NumberArray[][]
+     
+     -Input is empty in both dimensions: Should return a valid NumberArray[][]
+     
+     -Input is empty in one dimension and has positive and negative values in the other dimension: Should return a valid NumberArray[][]
+     
+     -Input has only one element in each dimension: Should return a valid NumberArray[][]
+     
+     -Input has ten elements in both dimensions: Should return a valid NumberArray[][]
+
+
 # 3 Test Cases Developed
 
 Range Class Test Cases Method:
@@ -207,6 +270,19 @@ Range Class Test Cases Method:
 | testGetLowerBoundNegativeLB() | input is at the lower boundary (LB, -1000) | Pass |
 | testGetLowerBoundNegativeBLB() | input is at below lower boundary (BLB) | Pass |
 
+|Method: intersects(double lower, double upper)|Equivalent Class Partition Assumed Intersect range: Range (5,15)| Actual Output: Pass/Fail|
+|----------------|----------------------|-------------------|
+|testIntersectsDoublesWithinRange()|First double: 10.5 Second double: 14.5 Range(10.5, 14.5) Expected Output: TRUE| Pass|
+|testIntersectsWithinRangeToRightLowerEqualsUpper()|First double: 15 Second double: 15 Range(15, 15) Expected Output: TRUE|Fail|
+|testIntersectsOutsideRangeToLeftLowerEqualsUpper()| First double: -5 Second double: -5 Range(-5, -5) Expected Output: FALSE|Fail|
+|testIntersectsDoublesWithinRangeLowerGreaterThanUpper()|First double: 14.5 Second double: 10.5 Range(14.5, 10.5) Expected Output: FALSE|Pass|
+|testIntersectsDoublesOnRightLowerGreaterThanUpper()|First double: 20 Second double: 10.5 Range(20, 10.5)Expected Output: FALSE|Pass|
+|testIntersectsDoublesOnLeftLowerGreaterThanUpper()|First double: 5.5 Second double: -5.5 Range(5.5, -5.5) Expected Output: FALSE|Pass|
+|testIntersectsWithinRangeToRight()|First double: 14.5 Second double: 20 Range(14.5, 20) Expected Output: TRUE|Fail|
+|testIntersectsWithinRangeToLeft()|First double: -5.2 Second double: 5.2 Range(-5.2, 5.2) Expected Output: TRUE|Pass|
+|testIntersectsEqualRangeToLeft()|First double: -5.2 Second double: 5 Range(-5.2, 5) Expected Output: TRUE|Pass|
+|testIntersectsOutsideRangeToLeft()|First double: -15.5 Second double: -5 Range(-15.5, -5) Expected Output: FALSE|Fail|
+
 
 Data Utilities Class Test Cases Method:
 
@@ -241,6 +317,30 @@ Data Utilities Class Test Cases Method:
 | testCalculateColumnTotalEmpty()               | Boundary, Empty key value sets are invalid input. Expected: total of zero  | Pass |
 | testCalculateColumnTotalNegativeColumnIndex() | Boundary, negative index is invalid input for Zero-Based Index. Expected: total of zero | Fail |
 | testCalculateColumnNullValue()                | Boundary, Null object is invalid data object, Expected: InvalidParameterException | Fail |
+
+|Method: getNumberArray(double [] data)|Equivalent Class Partition|Actual Output: Pass/Fail|
+|----------------|----------------------|-------------------|
+|createNumberArrayStandard()|An array with a mix of positives and negatives will be passed to the function Array used: {19.2,-2.6,40.9,-3.5} Expected Output: {19.2,-2.6,40.9,-3.5}|Fail|
+|createNumberArrayNull()|A null array will be passed Array used: null Expected Output: InvalidParameterException|Fail|
+|createNumberArrayPositives()|An array with positives will be passed Array used: {1.2,2.3,3.4,4.5} Expected Output: {1.2,2.3,3.4,4.5}|Fail|
+|createNumberArrayNegatives()|An array with negatives will be passed Array used: {-1.2,-2.3,-3.4,-4.5} Expected Output: {-1.2,-2.3,-3.4,-4.5}|Fail|
+|createNumberArrayEmpty()|An empty array will be passed Array used: {} Expected Output: {}|Pass|
+|createNumberArrayOneElement()|An array with only 1 element will be passed Array used: {0} Expected Output: {0}|Fail|
+|createNumberArrayTenElements()|An array with 10 elements will be passed Array used: {0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0} Expected Output: {0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0}|Fail|
+
+
+|Method: getNumberArray2D(double [][] data)|Equivalent Class Partition|Actual Output: Pass/Fail|
+|----------------|----------------------|-------------------|
+|createNumberArray2DStandard()|A 2D array with positive and negative values will be passed First Array: {1.0,-2.0,3.0} Second Array: {-1.0,2.0,-3.0} Expected Output: {{1.0,-2.0,3.0},{-1.0,2.0,-3.0}}|Fail|
+|createNumberArray2DNull()|A null 2D array will be passed First Array: null Second Array: null Expected Output: InvalidParameterException|Fail|
+|createNumberArray2DPositives()|A 2D array with only positive  values will be passed First Array: {1.5,10.0,20.4,30.5,45.2} Second Array: {2.0,5.2,6.3,15.4,22.5} Expected Output: {{1.5,10.0,20.4,30.5,45.2},{2.0,5.2,6.3,15.4,22.5}}|Fail|
+|createNumberArray2DNegatives()|A 2D array with only negative  values will be passed First Array: {-1.5,-10.0,-20.4,-30.5,-45.2} Second Array: {-2.0,-5.2,-6.3,-15.4,-22.5} Expected Output: {{-1.5,-10.0,-20.4,-30.5,-45.2},{-2.0,-5.2,-6.3,-15.4,-22.5}}|Fail|
+|createNumberArray2DBothEmpty()|A 2D array with no values will be passed First Array: {} Second Array: {} Expected Output: {{},{}}|Pass|
+|createNumberArray2DOneEmpty()|A 2D array with one dimension being empty will be passed First Array: {1.0,-2.0,3.0} Second Array: {} Expected Output: {{1.0,-2.0,3.0},{}}|Fail|
+|createNumberArray2DOneElements()|A 2D array with only one element in each dimension will be passed First Array: {0.0} Second Array: {0.0} Expected Output: {{0.0},{0.0}}|Fail|
+|createNumberArray2DTenElements()|A 2D array with ten elements in each dimension will be passed First Array: {0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0} Second Array: {0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0} Expected Output: {{0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0},{0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0}}|Fail|
+
+
 
 
 # 4 How the team work/effort was divided and managed
