@@ -178,6 +178,18 @@ Data Utilities Class Test Cases Method:
 
 <img width="600" alt="Screen Shot 2023-02-09 at 7 47 09 PM" src="https://user-images.githubusercontent.com/77519521/217987542-90d7f8ff-050d-4ace-94f1-a47dfeca4c7c.jpg">
 
+| Method: getCumulativePercentages(KeyedValues):KeyedValues |  Equivalent Class Partition   | Actual Output: Pass/Fail|
+| --------------------------------------------- | --- | --- |
+|testGetCumulativePercentagesNull() |Input is null | Pass |
+|testGetCumulativePercentagesEmpty() |Input is an empty KeyedValues object | Pass |
+|testGetCumulativePercentagesOneValue() |Input is a KeyedValues object with one value (positive) | Fail |
+|testGetCumulativePercentagesFiveValues() |Input is a KeyedValues object with five values (positive) | Fail |
+|testGetCumulativePercentagesPositiveAndNegative() |Input is a KeyedValues object with both positive and negative values | Fail |
+|testGetCumulativePercentagesAllZero() |Input is a KeyedValues object with all zero values | Pass |
+|testGetCumulativePercentagesFirstValueZero() |Input is a KeyedValues object where first value is zero | Pass |
+|testGetCumulativePercentagesLastValueZero() |Input is a KeyedValues object with last value is zero | Fail |
+|testGetCumulativePercentagesIntAndDouble() | Input is a KeyedValues object with a mix of int and double values| Fail |
+
 | Method: calculateColumnTotal() |  Equivalent Class Partition/Boundary Value   | Actual Output: Pass/Fail|
 | --------------------------------------------- | --- | --- |
 | testCalculateColumnTotalFiveValues()          | Inputs in middle of range (5 pairs, positive values with positive Index number) | Pass |
