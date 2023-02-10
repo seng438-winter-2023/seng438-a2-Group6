@@ -174,7 +174,7 @@ public class DataUtilitiesTest {
 		 try {
 			 DataUtilities.calculateColumnTotal(values, 0);// line that exception will occurs
 		 }catch(Exception e) {
-			 assertEquals("InvalidParameterException was thrown",IllegalArgumentException.class, 
+			 assertEquals("InvalidParameterException was thrown",InvalidParameterException.class, 
 					 e.getClass());
 		 }
 	 }
