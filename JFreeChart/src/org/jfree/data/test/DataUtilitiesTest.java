@@ -7,6 +7,7 @@ import java.security.InvalidParameterException;
 import org.junit.*;
 import org.jfree.data.DataUtilities;
 import org.jfree.data.Values2D;
+import org.jfree.data.KeyedValues;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 
@@ -628,7 +629,397 @@ public class DataUtilitiesTest {
 		 }
 	 
 	// ------- End of Test for calculateRowTotal(Values2D, int) -------
+	
+	
+	// ------- Start of Test for getCumulativePercentages(KeyedValues): KeyedValues -------
+	/*
+	*  This test will simulate when the input is null
+	*  Expected result: InvalidParameterException is thrown
+	*/	 
+	 @Test(expected = IllegalArgumentException.class) // expecting an exception
+	 public void testGetCumulativePercentagesNull(){
+		 final KeyedValues values = null; 				  // invalid data object (null)
+		 DataUtilities.getCumulativePercentages(values);// line that exception will occur
+	 }
+	
+	
+	/*
+	 *  This test will simulate when the input is an empty KeyedValues object (no data)
+	 *  Expected result: A valid KeyedValues object is returned
+	 */	
+	 @Test(timeout = 1000) // timeout: 1000
+	 public void testGetCumulativePercentagesEmpty() {
+	     Mockery mockingContext = new Mockery();
+	     final KeyedValues values = mockingContext.mock(KeyedValues.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	             allowing(values).getItemCount();
+	             will(returnValue(1));
+	             
+	             allowing(values).getValue(0);
+	             will(returnValue(0));
+	             
+	             allowing(values).getKey(0);
+	             will(returnValue(0));
+	             
+	         }
+	     });
+	    
+	     KeyedValues actualResult = DataUtilities.getCumulativePercentages(values);
+	     assertEquals("Checking function returns correct cumulative percentages",0.0/0.0, actualResult.getValue(0));
+	 }
 	 
+	 /*
+	  *  This test will simulate when the input is a KeyedValues object with one value (positive)
+	  *  Expected result: A valid KeyedValues object is returned
+	  */	 
+	  @Test(timeout = 1000) // timeout: 1000
+	  public void testGetCumulativePercentagesOneValue() {
+	      Mockery mockingContext = new Mockery();
+	      final KeyedValues values = mockingContext.mock(KeyedValues.class);
+	      mockingContext.checking(new Expectations() {
+		  {
+			allowing(values).getItemCount();
+		        will(returnValue(1));
+		             
+		        allowing(values).getValue(0);
+		        will(returnValue(10));
+		             
+		        allowing(values).getKey(0);
+		        will(returnValue(0));
+
+		  }
+	       });
+		    
+	       KeyedValues actualResult = DataUtilities.getCumulativePercentages(values);
+	       assertEquals("Checking function returns correct cumulative percentages",10.0/10.0, actualResult.getValue(0));
+	   }
+		 
+	
+	/*
+	 *  This test will simulate when the input is a KeyedValues object with five values (positive)
+	 *  Expected result: A valid KeyedValues object is returned
+	 */	
+	 @Test(timeout = 1000) // timeout: 1000
+	 public void testGetCumulativePercentagesFiveValues() {
+	     Mockery mockingContext = new Mockery();
+	     final KeyedValues values = mockingContext.mock(KeyedValues.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	        	 allowing(values).getItemCount();
+	             will(returnValue(5));
+	             
+	             allowing(values).getValue(0);
+	             will(returnValue(10));
+	             
+	             allowing(values).getValue(1);
+	             will(returnValue(20));
+	             
+	             allowing(values).getValue(2);
+	             will(returnValue(18));
+	             
+	             allowing(values).getValue(3);
+	             will(returnValue(3));
+	             
+	             allowing(values).getValue(4);
+	             will(returnValue(5));
+	             
+	             allowing(values).getKey(0);
+	             will(returnValue(0));
+	             
+	             allowing(values).getKey(1);
+	             will(returnValue(1));
+	             
+	             allowing(values).getKey(2);
+	             will(returnValue(2));
+	             
+	             allowing(values).getKey(3);
+	             will(returnValue(3));
+	             
+	             allowing(values).getKey(4);
+	             will(returnValue(4));   
+	         }
+	     });
+	    
+	     KeyedValues actualResult = DataUtilities.getCumulativePercentages(values);
+	     assertEquals("Checking function returns correct cumulative percentages",10.0/56.0, actualResult.getValue(0));
+	     assertEquals("Checking function returns correct cumulative percentages",30.0/56.0, actualResult.getValue(1));
+	     assertEquals("Checking function returns correct cumulative percentages",48.0/56.0, actualResult.getValue(2));
+	     assertEquals("Checking function returns correct cumulative percentages",51.0/56.0, actualResult.getValue(3));
+	     assertEquals("Checking function returns correct cumulative percentages",56.0/56.0, actualResult.getValue(4));
+	 }
+	
+
+	/*
+	 *  This test will simulate when the input is a KeyedValues object with both positive and negative values
+	 *  Expected result: A valid KeyedValues object is returned
+	 */	 
+	 @Test(timeout = 1000) // timeout: 1000
+	 public void testGetCumulativePercentagesPositiveAndNegative() {
+	     Mockery mockingContext = new Mockery();
+	     final KeyedValues values = mockingContext.mock(KeyedValues.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	        	 allowing(values).getItemCount();
+	             will(returnValue(5));
+	             
+	             allowing(values).getValue(0);
+	             will(returnValue(30));
+	             
+	             allowing(values).getValue(1);
+	             will(returnValue(-20));
+	             
+	             allowing(values).getValue(2);
+	             will(returnValue(1));
+	             
+	             allowing(values).getValue(3);
+	             will(returnValue(-3));
+	             
+	             allowing(values).getValue(4);
+	             will(returnValue(5));
+	             
+	             allowing(values).getKey(0);
+	             will(returnValue(0));
+	             
+	             allowing(values).getKey(1);
+	             will(returnValue(1));
+	             
+	             allowing(values).getKey(2);
+	             will(returnValue(2));
+	             
+	             allowing(values).getKey(3);
+	             will(returnValue(3));
+	             
+	             allowing(values).getKey(4);
+	             will(returnValue(4));   
+	         }
+	     });
+	     KeyedValues actualResult = DataUtilities.getCumulativePercentages(values);
+	     assertEquals("Checking function returns correct cumulative percentages",30.0/13.0, actualResult.getValue(0));
+	     assertEquals("Checking function returns correct cumulative percentages",10.0/13.0, actualResult.getValue(1));
+	     assertEquals("Checking function returns correct cumulative percentages",11.0/13.0, actualResult.getValue(2));
+	     assertEquals("Checking function returns correct cumulative percentages",8.0/13.0, actualResult.getValue(3));
+	     assertEquals("Checking function returns correct cumulative percentages",13.0/13.0, actualResult.getValue(4));
+	 }
+
+	
+	
+	/*
+	 *  This test will simulate when the input is a KeyedValues object with all zero values
+	 *  Expected result: A valid KeyedValues object is returned
+	 */	 
+	 @Test(timeout = 1000) // timeout: 1000
+	 public void testGetCumulativePercentagesAllZero() {
+	     Mockery mockingContext = new Mockery();
+	     final KeyedValues values = mockingContext.mock(KeyedValues.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	        	 allowing(values).getItemCount();
+	             will(returnValue(5));
+	             
+	             allowing(values).getValue(0);
+	             will(returnValue(0));
+	             
+	             allowing(values).getValue(1);
+	             will(returnValue(0));
+	             
+	             allowing(values).getValue(2);
+	             will(returnValue(0));
+	             
+	             allowing(values).getValue(3);
+	             will(returnValue(0));
+	             
+	             allowing(values).getValue(4);
+	             will(returnValue(0));
+	             
+	             allowing(values).getKey(0);
+	             will(returnValue(0));
+	             
+	             allowing(values).getKey(1);
+	             will(returnValue(1));
+	             
+	             allowing(values).getKey(2);
+	             will(returnValue(2));
+	             
+	             allowing(values).getKey(3);
+	             will(returnValue(3));
+	             
+	             allowing(values).getKey(4);
+	             will(returnValue(4));   
+	         }
+	     });
+	    
+	     KeyedValues actualResult = DataUtilities.getCumulativePercentages(values);
+	     assertEquals("Checking function returns correct cumulative percentages",0.0/0.0, actualResult.getValue(0));
+	     assertEquals("Checking function returns correct cumulative percentages",0.0/0.0, actualResult.getValue(1));
+	     assertEquals("Checking function returns correct cumulative percentages",0.0/0.0, actualResult.getValue(2));
+	     assertEquals("Checking function returns correct cumulative percentages",0.0/0.0, actualResult.getValue(3));
+	     assertEquals("Checking function returns correct cumulative percentages",0.0/0.0, actualResult.getValue(4));
+	 }
+	
+	 /*
+	  *  This test will simulate when the input is a KeyedValues object where first value is zero
+	  *  Expected result: A valid KeyedValues object is returned
+	  */
+	 @Test(timeout = 1000) // timeout: 1000
+	 public void testGetCumulativePercentagesFirstValueZero() {
+	     Mockery mockingContext = new Mockery();
+	     final KeyedValues values = mockingContext.mock(KeyedValues.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	        	 allowing(values).getItemCount();
+	             will(returnValue(5));
+	             
+	             allowing(values).getValue(0);
+	             will(returnValue(0));
+	             
+	             allowing(values).getValue(1);
+	             will(returnValue(1));
+	             
+	             allowing(values).getValue(2);
+	             will(returnValue(2));
+	             
+	             allowing(values).getValue(3);
+	             will(returnValue(3));
+	             
+	             allowing(values).getValue(4);
+	             will(returnValue(4));
+	             
+	             allowing(values).getKey(0);
+	             will(returnValue(0));
+	             
+	             allowing(values).getKey(1);
+	             will(returnValue(1));
+	             
+	             allowing(values).getKey(2);
+	             will(returnValue(2));
+	             
+	             allowing(values).getKey(3);
+	             will(returnValue(3));
+	             
+	             allowing(values).getKey(4);
+	             will(returnValue(4));   
+	         }
+	     });
+	    
+	     KeyedValues actualResult = DataUtilities.getCumulativePercentages(values);
+	     assertEquals("Checking function returns correct cumulative percentages",0.0/10.0, actualResult.getValue(0));
+	     assertEquals("Checking function returns correct cumulative percentages",1.0/10.0, actualResult.getValue(1));
+	     assertEquals("Checking function returns correct cumulative percentages",3.0/10.0, actualResult.getValue(2));
+	     assertEquals("Checking function returns correct cumulative percentages",6.0/10.0, actualResult.getValue(3));
+	     assertEquals("Checking function returns correct cumulative percentages",10.0/10.0, actualResult.getValue(4));
+	 }
+	 
+	 /*
+	  *  This test will simulate when the input is a KeyedValues object where last value is zero
+	  *  Expected result: A valid KeyedValues object is returned
+	  */
+	 @Test(timeout = 1000) // timeout: 1000
+	 public void testGetCumulativePercentagesLastValueZero() {
+	     Mockery mockingContext = new Mockery();
+	     final KeyedValues values = mockingContext.mock(KeyedValues.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	        	 allowing(values).getItemCount();
+	             will(returnValue(5));
+	             
+	             allowing(values).getValue(0);
+	             will(returnValue(10));
+	             
+	             allowing(values).getValue(1);
+	             will(returnValue(1));
+	             
+	             allowing(values).getValue(2);
+	             will(returnValue(2));
+	             
+	             allowing(values).getValue(3);
+	             will(returnValue(3));
+	             
+	             allowing(values).getValue(4);
+	             will(returnValue(0));
+	             
+	             allowing(values).getKey(0);
+	             will(returnValue(0));
+	             
+	             allowing(values).getKey(1);
+	             will(returnValue(1));
+	             
+	             allowing(values).getKey(2);
+	             will(returnValue(2));
+	             
+	             allowing(values).getKey(3);
+	             will(returnValue(3));
+	             
+	             allowing(values).getKey(4);
+	             will(returnValue(4));   
+	         }
+	     });
+	    
+	     KeyedValues actualResult = DataUtilities.getCumulativePercentages(values);
+	     assertEquals("Checking function returns correct cumulative percentages",10.0/16.0, actualResult.getValue(0));
+	     assertEquals("Checking function returns correct cumulative percentages",11.0/16.0, actualResult.getValue(1));
+	     assertEquals("Checking function returns correct cumulative percentages",13.0/16.0, actualResult.getValue(2));
+	     assertEquals("Checking function returns correct cumulative percentages",16.0/16.0, actualResult.getValue(3));
+	     assertEquals("Checking function returns correct cumulative percentages",16.0/16.0, actualResult.getValue(4));
+	 }
+	 
+	 /*
+	  *  This test will simulate when the input is a KeyedValues object with mix of int and double values
+	  *  Expected result: A valid KeyedValues object is returned
+	  */
+	 @Test(timeout = 1000) // timeout: 1000
+	 public void testGetCumulativePercentagesIntAndDouble() {
+	     Mockery mockingContext = new Mockery();
+	     final KeyedValues values = mockingContext.mock(KeyedValues.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	        	 allowing(values).getItemCount();
+	             will(returnValue(5));
+	             
+	             allowing(values).getValue(0);
+	             will(returnValue(1));
+	             
+	             allowing(values).getValue(1);
+	             will(returnValue(2.4));
+	             
+	             allowing(values).getValue(2);
+	             will(returnValue(3.7));
+	             
+	             allowing(values).getValue(3);
+	             will(returnValue(3));
+	             
+	             allowing(values).getValue(4);
+	             will(returnValue(4));
+	             
+	             allowing(values).getKey(0);
+	             will(returnValue(0));
+	             
+	             allowing(values).getKey(1);
+	             will(returnValue(1));
+	             
+	             allowing(values).getKey(2);
+	             will(returnValue(2));
+	             
+	             allowing(values).getKey(3);
+	             will(returnValue(3));
+	             
+	             allowing(values).getKey(4);
+	             will(returnValue(4));   
+	         }
+	     });
+	    
+	     KeyedValues actualResult = DataUtilities.getCumulativePercentages(values);
+	     assertEquals("Checking function returns correct cumulative percentages",1.0/14.1, actualResult.getValue(0));
+	     assertEquals("Checking function returns correct cumulative percentages",3.4/14.1, actualResult.getValue(1));
+	     assertEquals("Checking function returns correct cumulative percentages",7.1/14.1, actualResult.getValue(2));
+	     assertEquals("Checking function returns correct cumulative percentages",10.1/14.1, actualResult.getValue(3));
+	     assertEquals("Checking function returns correct cumulative percentages",14.1/14.1, actualResult.getValue(4));
+	 }
+	
+	
+	
+	// ------- End of Test for getCumulativePercentages(KeyedValues): KeyedValues -------
+	
 	
 	 // -----------------------------------------------------------------------------------------
 	 // End of Test Code
