@@ -398,8 +398,7 @@ Jack Li
           
           
 # 5 Difficulties encountered, challenges overcome, and lessons learned
-
-Text…
+Some of the difficulties we initially faced included creating Mock objects for testing, as it was slightly unfamiliar to us, we were able to follow the example given in the markdown as well as resources such as slides to help us understand Mocking better. Another slight difficulty we faced was with GitHub and managing the different versions of test files, however we were able to manage this with better communication. Overall, we learned more about designing and carrying out unit tests via JUnit and were able to gain more experience with blackbox testing. 
 
 # 6 Comments/feedback on the lab itself
 
